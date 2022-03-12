@@ -1,0 +1,45 @@
+$textColor:rgba(0,0,0,0.8);
+$fontWeight: 500; 
+$fontWeightSemiBold: 600;
+$clickScale:0.9;
+%borderRadius {
+    border-radius: 25px;
+}
+%uncopyable {
+    user-select: none;
+}
+%undragable {
+    pointer-events: none;
+}
+%link {
+    color: #000;
+    text-decoration: underline;
+    font-weight: $fontWeight;
+}
+%height100 {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+%btn {
+    text-transform: uppercase;
+    font-weight: $fontWeightSemiBold;
+
+    padding: 2em 3.5em;
+
+    @extend %borderRadius;
+    outline: 4px solid $textColor;
+    background-color: rgba(0,0,0,0.45);
+    color: $textColor;
+
+    transition: .25s all;
+
+    &:hover {
+        background-color: rgba(0,0,0,0.25);
+    }
+
+    &:active {
+        transform: scale($clickScale);
+        outline: 2px solid $textColor;
+    }
+}
