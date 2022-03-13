@@ -243,6 +243,9 @@ body {
 .page-main .generator__item__col1__info, .generator .page-main .generator__item__col1__info {
   font-family: "Comfortaa", cursive;
 }
+.page-main .generator__item__col1__btn, .generator .page-main .generator__item__col1__btn {
+  margin-top: auto;
+}
 .page-main .generator__item__col2__result, .generator .page-main .generator__item__col2__result {
   display: -webkit-box;
   display: -ms-flexbox;

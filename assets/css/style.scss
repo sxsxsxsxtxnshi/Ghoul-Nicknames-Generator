@@ -106,7 +106,6 @@ body {
     @extend %height100;
     }
 
-
         &__sup {
             display: flex;
             flex-direction: column;
@@ -152,6 +151,7 @@ body {
                 }
                 &__btn {
                     @extend %btn;
+                    margin-top: auto;
                 }//col1_btn
 
             }//col1
