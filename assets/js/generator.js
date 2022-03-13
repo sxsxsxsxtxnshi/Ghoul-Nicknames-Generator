@@ -28,9 +28,14 @@ let codexNum = document.querySelector('.generator__item__col1__info');
 let divBG = document.querySelector('.generator__item__col2__img');
 
 let genBtn = document.querySelector('.generator__item__col1__btn');
-let getNickname = function(max) {
+let getFirstName = function(max) {
     let result = Math.round(Math.random() * max);
-    return `${firstNames[result]} ${secondNames[result]}`;
+    return firstNames[result]
+};
+
+let getSecondName = function(max) {
+    let result = Math.round(Math.random() * max);
+    return secondNames[result]
 };
 
 let getCodexItem = function(max) {
@@ -48,14 +53,14 @@ var getBG = function(max) {
     return backgrounds[result]
 };
 
-nickname.textContent = getNickname(firstNames.length - 1);
+nickname.textContent = `${getFirstName(firstNames.length - 1)} ${getSecondName(secondNames.length - 1)}`;
 codexNum.textContent = `Заповедь гуля №${getCodexItem(codex.length - 1)}`;
 divBG.style.backgroundImage = `url('${getDivBG(divBGs.length - 1)}')`;
 body.style.backgroundImage = `url('${getBG(backgrounds.length - 1)}')`;
 
 genBtn.onclick = () => {
-    nickname.textContent = getNickname(firstNames.length - 1);
+    nickname.textContent = `${getFirstName(firstNames.length - 1)} ${getSecondName(secondNames.length - 1)}`;
     codexNum.textContent = `Заповедь гуля №${getCodexItem(codex.length - 1)}`;
     divBG.style.backgroundImage = `url('${getDivBG(divBGs.length - 1)}')`;
     body.style.backgroundImage = `url('${getBG(backgrounds.length - 1)}')`;
-}
+};
