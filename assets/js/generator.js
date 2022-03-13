@@ -1,3 +1,4 @@
+
 let firstNames = ['zxc','cvrsxd?','sxd','zxcvenorez','dolboeb1','ты в муте чудище','💔 𝐷 𝑒 𝑎 𝑑   𝑖 𝑛 𝑠 𝑖 𝑑 𝑒 💔','†𝙳𝚎𝚊𝚍𝙸𝚗𝚜𝚒𝚍𝚎†','безмамный гуль','克グghoulグ克','damaged 6 y.o.','zxcaratel next door大1000-7?克','ZXChloroplast',];
 let secondNames = ['im 12yo btw','dead inside', 'гуль 1000 ранга','【🅳🅴🅰🅳🅸🅽🆂🅸🅳🅴','I wanna die','伝sad伝 ︎鎰dying as a lifestyle鎰︎','zxclobbylord','😈На́гибат0р Ваших Мам0к 288😈','Dëåd🖤 ïñ$ïdë🖤','波は彼らの罪を贖うための無駄な試みで岸に衝突します','zxc мать в канаве','zxcБЕЗДАРЬ','dead inside chen abuzer スempti',];
 secondNames.length = firstNames.length;
@@ -16,6 +17,11 @@ let codex = [
     '12. запомни в последний раз, ты не клоун, не позер и не нытик, ты гуль, не позорься и строй из себя не пойми что ',
 ];
 let divBGs = ['assets/img/divBGs/bg1.webp','assets/img/divBGs/bg2.webp','assets/img/divBGs/bg3.webp','assets/img/divBGs/bg4.webp','assets/img/divBGs/bg5.webp','assets/img/divBGs/bg6.webp','assets/img/divBGs/bg7.webp','assets/img/divBGs/bg8.webp','assets/img/divBGs/bg9.webp','assets/img/divBGs/bg10.webp','assets/img/divBGs/bg11.webp','assets/img/divBGs/bg12.webp','assets/img/divBGs/bg13.webp',];
+var body = document.querySelector('body');
+var backgrounds = ['assets/img/bg/bg1.webp','assets/img/bg/bg2.webp','assets/img/bg/bg3.webp','assets/img/bg/bg4.webp','assets/img/bg/bg5.webp','assets/img/bg/bg7.webp','assets/img/bg/bg8.webp',];
+
+
+
 
 let nickname = document.querySelector('.generator__item__col2__result');
 let codexNum = document.querySelector('.generator__item__col1__info');
@@ -37,12 +43,19 @@ let getDivBG = function(max) {
     return divBGs[result]
 };
 
+var getBG = function(max) {
+    var result = Math.round(Math.random() * max);
+    return backgrounds[result]
+};
+
 nickname.textContent = getNickname(firstNames.length - 1);
 codexNum.textContent = `Заповедь гуля №${getCodexItem(codex.length - 1)}`;
 divBG.style.backgroundImage = `url('${getDivBG(divBGs.length - 1)}')`;
+body.style.backgroundImage = `url('${getBG(backgrounds.length - 1)}')`;
 
 genBtn.onclick = () => {
     nickname.textContent = getNickname(firstNames.length - 1);
     codexNum.textContent = `Заповедь гуля №${getCodexItem(codex.length - 1)}`;
     divBG.style.backgroundImage = `url('${getDivBG(divBGs.length - 1)}')`;
+    body.style.backgroundImage = `url('${getBG(backgrounds.length - 1)}')`;
 }
